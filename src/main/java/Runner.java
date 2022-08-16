@@ -1,5 +1,6 @@
 import java.text.Collator;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -30,7 +31,7 @@ public class Runner {
 //        7. Print the number of islands in your arraylist
         System.out.println(scottishIslands.size());
 //        8. Sort the list alphabetically
-        java.util.Collections.sort(scottishIslands, Collator.getInstance());
+        Collections.sort(scottishIslands, Collator.getInstance());
 //        9. Print out all the islands using a for loop
         for (int i = 0; i < scottishIslands.size(); i++){
             String island = scottishIslands.get(i);
@@ -54,13 +55,47 @@ public class Runner {
         }
         System.out.println(evenNumbers);
 //        2. Print the difference between the largest and smallest value
+      //  Collections.sort(numbers);
+       // Integer range = (numbers.get(numbers.size()-1) -numbers.get(0));
+       // System.out.println(range);
 //        3. Print True if the list contains a 1 next to a 1 somewhere.
+        for (int i = 0; i < numbers.size(); i++){
+            if (numbers.get(i) == 1 && numbers.get(i) == numbers.get(++i)){
+                System.out.println("True");
+            }
+        }
 //        4. Print the sum of the numbers,
+        Integer sum = 0;
+        for (int i = 0; i < numbers.size(); i++){
+            sum += numbers.get(i);
+        }
+        System.out.println(sum);
 //        5. Print the sum of the numbers...
 //           ...except the number 13 is unlucky, so it does not count...
 //           ...and numbers that come immediately after a 13 also do not count.
+        int newSum = 0;
+        for (int i = 0; i < numbers.size(); i++){
+            if (numbers.get(i) == 13){
+               newSum = ( sum - (numbers.get(i) + numbers.get(++i)));
+            }
+        }
+        System.out.println(newSum);
 //
 //          So [7, 13, 2] would have sum of 9.
+        List<Integer> test = new ArrayList<>();
+        test.add(1);
+        test.add(7);
+        test.add(9);
+        test.add(1);
+        test.add(1);
+
+        for (int i = 0; i < test.size(); i++){
+            if (test.get(i) == 1 && test.get(i) == test.get(++i)){
+                System.out.println("True");
+            }
+        }
+
+
 
     }
 
